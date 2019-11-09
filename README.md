@@ -9,5 +9,5 @@ CeaserCipher is a java console application that provides basic text encryption a
 ## User Requirements
 
 Users can perform the following actions;
-- Enter plain text which should be a string
-- Specify encrypt key which should be an integer between 1 and 25, both limits inclusive
+- Enter plain text which should be a string.
+- Specify encrypt key which should be an integer between 1 and 25, both limits inclusive.
