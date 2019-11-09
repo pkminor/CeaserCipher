@@ -10,4 +10,10 @@ public class DecoderTest {
         assertEquals(true, decode instanceof Decoder);
     }
 
+    @Test
+    public void getPlainText_fetchPlainText_String(){
+        Decoder decode = new Decoder();
+        assertEquals(true, decode.getPlainText() instanceof String);
+    }
+
 }
