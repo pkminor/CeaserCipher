@@ -10,7 +10,11 @@ public class EncodingTest {
         assertEquals(true, encoder instanceof Encoding);
     }
 
-
+    @Test
+    public void getCryptText_fetchCryptText_String(){
+        Encoding encoder = new Encoding();
+        assertEquals(true,encoder.getCryptText() instanceof String);
+    }
 
 
 }
