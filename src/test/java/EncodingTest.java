@@ -16,5 +16,11 @@ public class EncodingTest {
         assertEquals(true,encoder.getCryptText() instanceof String);
     }
 
+    @Test
+    public void getKey_fetchKey_Integer(){
+        Encoding encoder = new Encoding();
+        assertEquals(true,encoder.getKey() instanceof Integer);
+    }
+
 
 }
