@@ -28,7 +28,7 @@ public class Encoding {
 
     public Encoding encrypt(String plainText){
 
-        //ensure key is initialized
+        //normalization
          if(plainText=="") plainText="A";
          plainText=plainText.toUpperCase();
 

@@ -28,4 +28,11 @@ public class DecoderTest {
         decode.setKey(1);
         assertEquals("A",decode.decryptText("B").getPlainText() );
     }
+
+    @Test
+    public void decoder_decryptManyChar_String(){
+        Decoder decode = new Decoder();
+        decode.setKey(1);
+        assertEquals("ABC",decode.decryptText("BCD").getPlainText() );
+    }
 }

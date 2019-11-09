@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Decoder {
     private String plainText;
@@ -26,7 +26,18 @@ public class Decoder {
 
     public Decoder decryptText(String cipherText){
 
-        this.plainText = IntMapChar.get((CharMapInt.get(cipherText)+(26-this.key))%26);
+        //normalization
+        if(cipherText=="") cipherText="A";
+        cipherText=cipherText.toUpperCase();
+
+        //this.plainText = IntMapChar.get((CharMapInt.get(cipherText)+(26-this.key))%26);
+
+        List<String> strList= new ArrayList<>(Arrays.asList(cipherText.split("")));
+        List<String> plainList= strList.stream()
+                .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + (26-this.key))%26))
+                .collect(Collectors.toList());
+
+        this.plainText=String.join("", plainList );
         return this;
     }
 }
