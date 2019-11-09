@@ -47,10 +47,7 @@ public class Encoding {
          return this;
     }
 
-    public String getCipherText(){
-        return (this.cipherText !=null)? this.cipherText : "";
-    }
-
+    public String getCipherText(){ return (this.cipherText !=null)? this.cipherText : "";     }
     public int getKey(){ return this.key;  }
     public void setKey(int key){ this.key=key; }
 }
