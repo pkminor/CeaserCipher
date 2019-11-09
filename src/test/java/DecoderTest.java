@@ -19,6 +19,13 @@ public class DecoderTest {
     @Test
     public void decoder_decryptText_DecoderObject(){
         Decoder decode = new Decoder();
-        assertEquals(true,decode.equals(decode.decryptText("")) );
+        assertEquals(true,decode.equals(decode.decryptText("Z")) );
+    }
+
+    @Test
+    public void decoder_decryptSingleChar_String(){
+        Decoder decode = new Decoder();
+        decode.setKey(1);
+        assertEquals("A",decode.decryptText("B").getPlainText() );
     }
 }
