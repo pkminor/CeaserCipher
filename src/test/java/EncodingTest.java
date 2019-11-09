@@ -17,7 +17,7 @@ public class EncodingTest {
     }
 
     @Test
-    public void getKey_fetchKey_Integer(){
+    public void getKey_fetchKey_int(){
         Encoding encoder = new Encoding();
         encoder.setKey(1);
         assertEquals(1,encoder.getKey());
@@ -30,7 +30,7 @@ public class EncodingTest {
     }
 
     @Test
-    public void setKey_initializePropertyKey_Integer(){
+    public void setKey_initializePropertyKey_int(){
         Encoding encoder = new Encoding();
         encoder.setKey(1);
         assertEquals(1, encoder.getKey());
