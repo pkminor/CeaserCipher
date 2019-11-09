@@ -16,4 +16,9 @@ public class DecoderTest {
         assertEquals(true, decode.getPlainText() instanceof String);
     }
 
+    @Test
+    public void decoder_decryptText_DecoderObject(){
+        Decoder decode = new Decoder();
+        assertEquals(true,decode.equals(decode.decryptText("")) );
+    }
 }

@@ -3,4 +3,8 @@ public class Decoder {
 
     public String getPlainText(){return this.plainText==null? String.valueOf(""): this.plainText ;}
 
+    public Decoder decryptText(String cipherText){
+
+        return this;
+    }
 }
