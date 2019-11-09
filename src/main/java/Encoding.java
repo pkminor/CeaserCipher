@@ -39,7 +39,7 @@ public class Encoding {
 
          List<String> strList= new ArrayList<>(Arrays.asList(plainText.split("")));
          List<String> cipherList= strList.stream()
-                 .map(c->this.IntMapChar.get( (this.CharMapInt.get(c) + this.key)%26))
+                 .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + this.key)%26))
                  .collect(Collectors.toList());
 
          this.cipherText=String.join("", cipherList );
