@@ -45,4 +45,12 @@ public class EncodingTest {
         assertEquals("B",cipher);
     }
 
+    @Test
+    public void encrypt_encryptManyChar_String(){
+        Encoding encoder = new Encoding();
+        encoder.setKey(1);
+        String cipher = encoder.encrypt("ABC").getCipherText();
+        assertEquals("BCD",cipher);
+    }
+
 }

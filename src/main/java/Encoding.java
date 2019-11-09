@@ -1,5 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
+import javafx.print.Collation;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Encoding {
 
@@ -9,10 +11,12 @@ public class Encoding {
     private Map<Integer, String> IntMapChar;
 
     public Encoding(){
-        this.CharMapInt =  new HashMap<String, Integer>();
-        this.IntMapChar =  new HashMap<Integer, String>();
 
-        int i=1;
+        this.key=1;
+        this.CharMapInt =  new HashMap<>();
+        this.IntMapChar =  new HashMap<>();
+
+        int i=0;
         for(char c='A'; c<='Z'; c++){
             this.CharMapInt.put(String.valueOf(c),i);
             this.IntMapChar.put(i,String.valueOf(c));
@@ -23,13 +27,23 @@ public class Encoding {
     }
 
     public Encoding encrypt(String plainText){
-         //ensure key is initialized
-         if(Integer.valueOf(this.key)==null) this.key=1;
-         if(plainText=="") plainText="A";
 
-         int charInt = this.CharMapInt.get(plainText);
-         int shifted = (charInt+this.key) % 26;
-         this.cipherText = this.IntMapChar.get(shifted);
+        //ensure key is initialized
+         if(plainText=="") plainText="A";
+         plainText=plainText.toUpperCase();
+
+         //single char mapping
+         //int charInt = this.CharMapInt.get(plainText);
+         //int shifted = (charInt+this.key) % 26;
+         //this.cipherText = this.IntMapChar.get(shifted);
+
+         List<String> strList= new ArrayList<>(Arrays.asList(plainText.split("")));
+         List<String> cipherList= strList.stream()
+                 .map(c->this.IntMapChar.get( (this.CharMapInt.get(c) + this.key)%26))
+                 .collect(Collectors.toList());
+
+         this.cipherText=String.join("", cipherList );
+
          return this;
     }
 
