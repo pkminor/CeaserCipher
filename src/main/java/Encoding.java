@@ -1,6 +1,6 @@
 public class Encoding {
     private String cryptText;
-    private Integer key;
+    private int key;
 
     public Encoding encrypt(String inputText){
         return this;
@@ -10,7 +10,11 @@ public class Encoding {
         return "";
     }
 
-    public Integer getKey(){
-        return 0;
+    public int getKey(){
+        return this.key;
+    }
+
+    public void setKey(int key){
+        this.key=key;
     }
 }

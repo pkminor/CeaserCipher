@@ -19,14 +19,22 @@ public class EncodingTest {
     @Test
     public void getKey_fetchKey_Integer(){
         Encoding encoder = new Encoding();
-        assertEquals(true,encoder.getKey() instanceof Integer);
+        encoder.setKey(1);
+        assertEquals(1,encoder.getKey());
     }
 
     @Test
     public void encoding_encryptText_EncodingObject(){
         Encoding encoder = new Encoding();
-        assertEquals(true,encoder.encrypt("") instanceof Encoding);
+        assertEquals(true,encoder.encrypt("").equals(encoder));
     }
 
+    @Test
+    public void setKey_initializePropertyKey_Integer(){
+        Encoding encoder = new Encoding();
+        encoder.setKey(1);
+        assertEquals(1, encoder.getKey());
+
+    }
 
 }
