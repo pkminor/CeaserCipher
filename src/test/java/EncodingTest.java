@@ -22,5 +22,11 @@ public class EncodingTest {
         assertEquals(true,encoder.getKey() instanceof Integer);
     }
 
+    @Test
+    public void encoding_encryptText_EncodingObject(){
+        Encoding encoder = new Encoding();
+        assertEquals(true,encoder.encrypt("") instanceof Encoding);
+    }
+
 
 }
