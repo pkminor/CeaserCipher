@@ -6,10 +6,15 @@ public class App {
         Encoding encode = new Encoding();
         Decoder decode = new Decoder();
 
-        System.out.println("Enter your encryption key: ");
+
         Scanner scan = new Scanner(System.in);
 
-        Integer user_key = scan.nextInt();
+        Integer user_key = -1;
+        while(user_key<0){
+            System.out.println("Enter your encryption key [unsigned integers only]: ");
+            user_key = scan.nextInt();
+        }
+
         encode.setKey(user_key);
         decode.setKey(user_key);
 
@@ -23,7 +28,7 @@ public class App {
         String cipherText= encode.encrypt(plainText).getCipherText();
 
         System.out.println("Cipher Text: "+cipherText);
-        System.out.println("Decrypted Text: "+decode.decryptText(cipherText).getPlainText());
+        System.out.println("Decrypted Text: "+decode.decrypt(cipherText).getPlainText());
 
     }
 }
