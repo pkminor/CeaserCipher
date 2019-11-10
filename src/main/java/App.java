@@ -6,7 +6,6 @@ public class App {
         Encoding encode = new Encoding();
         Decoder decode = new Decoder();
 
-
         Scanner scan = new Scanner(System.in);
 
         Integer user_key = -1;
@@ -19,7 +18,8 @@ public class App {
         decode.setKey(user_key);
 
         System.out.println("Enter plain text to encrypt: ");
-        String plainText = scan.next();
+        String plainText = scan.nextLine();
+        plainText = scan.nextLine();
 
         System.out.println("==============================================");
         System.out.println("Plain Text: "+plainText);

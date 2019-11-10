@@ -12,7 +12,7 @@ public class Decoder {
         this.IntMapChar =  new HashMap<>();
 
         int i=0;
-        for(char c='A'; c<='Z'; c++){
+        for(char c=' '; c<='~'; c++){
             this.CharMapInt.put(String.valueOf(c),i);
             this.IntMapChar.put(i,String.valueOf(c));
             i++;
@@ -34,7 +34,7 @@ public class Decoder {
 
         List<String> strList= new ArrayList<>(Arrays.asList(cipherText.split("")));
         List<String> plainList= strList.stream()
-                .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + (26-this.key))%26))
+                .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + (95-this.key))%95))
                 .collect(Collectors.toList());
 
         this.plainText=String.join("", plainList );

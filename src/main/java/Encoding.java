@@ -17,7 +17,7 @@ public class Encoding {
         this.IntMapChar =  new HashMap<>();
 
         int i=0;
-        for(char c='A'; c<='Z'; c++){
+        for(char c=' '; c<='~'; c++){
             this.CharMapInt.put(String.valueOf(c),i);
             this.IntMapChar.put(i,String.valueOf(c));
             i++;
@@ -39,7 +39,7 @@ public class Encoding {
 
          List<String> strList= new ArrayList<>(Arrays.asList(plainText.split("")));
          List<String> cipherList= strList.stream()
-                 .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + this.key)%26))
+                 .map(c->this.IntMapChar.get( (this.CharMapInt.get((CharMapInt.containsKey(c))? c:"A") + this.key)%95))
                  .collect(Collectors.toList());
 
          this.cipherText=String.join("", cipherList );
