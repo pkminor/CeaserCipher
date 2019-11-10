@@ -31,5 +31,5 @@ There are no known bugs. Please submit those you find for correction.
 ## Contributing
 Pull requests are encouraged.
 
-##License
+## License
 This project is licensed under the MIT Open Source license.
