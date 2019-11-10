@@ -24,7 +24,7 @@ public class Decoder {
     public void setKey(int key){ this.key=key; }
     public int getKey(){ return this.key; }
 
-    public Decoder decryptText(String cipherText){
+    public Decoder decrypt(String cipherText){
 
         //normalization
         if(cipherText=="") cipherText="A";
